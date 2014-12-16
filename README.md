@@ -36,3 +36,6 @@ speed-and-tweet -i 10
 # Runs the test every 5 minutes and tweets with total set to 100
 speed-and-tweet -t 100
 ```
+
+# Example tweet
+@comcast I pay for 25Mb/s and only get 3.14 Mb/s. http://www.speedtest.net/result/3988254123.png #YourTry github.com/wasbazi/speed-and-tweet
