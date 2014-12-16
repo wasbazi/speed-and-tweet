@@ -1,0 +1,22 @@
+#! /usr/bin/env node
+
+var yargs = require('yargs')
+  .usage('Run a recurring speed test, then post the results to twitter\nUsage: $0 -t [num]')
+  .describe('time', 'sets the interval that tests are run')
+  .describe('total', 'sets the total speed you are paying for')
+  .alias('total', 't')
+  .default('total', 25)
+  .alias('interval', 'i')
+  .default('interval', 5)
+  .describe('help', 'displays this help message')
+  .alias('help', 'h')
+
+var argv = yargs.argv
+
+if(argv.help){
+  console.log(yargs.help())
+  process.exit(1)
+}
+
+var recurTest = require('../lib/recur-test')
+recurTest(argv.t)
