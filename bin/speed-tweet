@@ -2,8 +2,11 @@
 
 var yargs = require('yargs')
   .usage('Run a recurring speed test, then post the results to twitter\nUsage: $0 -t [num]')
-  .describe('time', 'sets the interval that tests are run')
+  .describe('recipient', 'the twitter handle of the recipient')
+  .describe('interval', 'sets the interval that tests are run')
   .describe('total', 'sets the total speed you are paying for')
+  .alias('recipient', 'r')
+  .default('recipient', 'comcast')
   .alias('total', 't')
   .default('total', 25)
   .alias('interval', 'i')
@@ -19,4 +22,4 @@ if(argv.help){
 }
 
 var recurTest = require('../lib/recur-test')
-recurTest(argv.t)
+recurTest(argv.t, argv.r)
