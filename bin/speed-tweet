@@ -22,4 +22,4 @@ if(argv.help){
 }
 
 var recurTest = require('../lib/recur-test')
-recurTest(argv.t, argv.r)
+recurTest(argv.i, argv.t, argv.r)
